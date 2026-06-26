@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трансформаційний Ретрит у Карпатах</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#8a9a7a',     // М'який зелений
+                        forest: '#2c4a3b',   // Темно-зелений
+                        earth: '#d2c4b4',    // Піщано-бежевий
+                        sand: '#f7f5f0',     // Світлий фон
+                        dark: '#1f2937'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(44, 74, 59, 0.4), rgba(44, 74, 59, 0.8)), url('https://images.unsplash.com/photo-1590243444451-24dbf1165bc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                        'nature-pattern': "linear-gradient(to right, rgba(247, 245, 240, 0.9), rgba(247, 245, 240, 0.7)), url('https://images.unsplash.com/photo-1542662565-7e4fd61448c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Додаткові стилі для плавності та дрібних деталей */
+        body {
+            background-color: #f7f5f0;
+            color: #1f2937;
+        }
+        .glass-nav {
+            background: rgba(247, 245, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(44, 74, 59, 0.1);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="font-sans antialiased text-dark">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-serif text-2xl font-bold text-forest tracking-wider uppercase">СЕМІНАР В КАРПАТАХ</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Про семінар</a>
+                    <a href="#location" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Локація</a>
+                    <a href="#program" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Програма</a>
+                    <a href="#pricing" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Вартість</a>
+                    <a href="#contacts" class="px-6 py-2 border border-forest text-forest hover:bg-forest hover:text-white transition-all duration-300 rounded-sm text-sm uppercase tracking-widest">
+                        Бронювати
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-forest hover:text-sage focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-sand border-t border-earth/30">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col text-center">
+                <a href="#about" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Про семінар</a>
+                <a href="#location" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Локація</a>
+                <a href="#program" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Програма</a>
+                <a href="#pricing" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Вартість</a>
+                <a href="#contacts" class="block mt-4 px-3 py-3 bg-forest text-white uppercase tracking-widest rounded-sm mx-4">Бронювати місце</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-white/80 uppercase tracking-[0.3em] mb-4 text-sm md:text-base fade-in-up">Перезавантаження тіла та душі</span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight fade-in-up delay-100">
+                МОВА ПРИРОДИ <br>ТА ПРОСТОРУ
+            </h1>
+            <p class="text-white/90 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto fade-in-up delay-200">
+                7 днів у горах.<br>Живий досвід природи, душі, світла, краси й глибини.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up delay-300">
+                <div class="bg-white/10 backdrop-blur-md border border-white/30 px-6 py-3 rounded-sm text-white">
+                    <i class="far fa-calendar-alt mr-2"></i> 9 - 15 липня 2026
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/30 px-6 py-3 rounded-sm text-white">
+                    <i class="fas fa-map-marker-alt mr-2"></i> Карпати, Верховина
+                </div>
+            </div>
+            <div class="mt-12 fade-in-up delay-300">
+                <a href="#contacts" class="inline-block bg-sage text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-forest transition-colors duration-300 rounded-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Приєднатися
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#about" class="text-white/70 hover:text-white">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Верхня частина: Вступ -->
+            <div class="flex flex-col lg:flex-row gap-16 items-center mb-20">
+                <div class="lg:w-1/2 relative">
+                    <!-- Image Grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1542662565-7e4fd61448c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Карпатські гори" class="rounded-tl-[3rem] rounded-br-[3rem] w-full h-64 object-cover shadow-lg transform translate-y-8">
+                        <img src="https://images.unsplash.com/photo-1627894291656-7848eb3a0050?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Краєвид гір у Верховині" class="rounded-tr-[3rem] rounded-bl-[3rem] w-full h-64 object-cover shadow-lg">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <span class="text-sage uppercase tracking-widest text-sm font-semibold">Про семінар</span>
+                    <h2 class="mt-4 font-serif text-4xl md:text-5xl text-forest mb-6">Живий досвід природи та душі</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed font-light text-lg">
+                        Цей семінар - не просто відпочинок, це глибоке занурення у взаємодію зі світом. Протягом 7 днів ми будемо вчитися слухати тишу, розуміти мову стихій та розкривати свій внутрішній космос серед могутніх гір Верховини. Ви можете обрати свій формат участі: пройти цей шлях самостійно, розділити його в парі або ж взяти з собою дитину.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Нижня частина: Програма семінару (Картки) -->
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl text-forest">У програмі семінару</h2>
+                <div class="w-24 h-1 bg-sage mx-auto mt-6 opacity-50"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-sun"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Сонячні ритуали</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Щоденна зустріч сходів сонця, купання в гірських річках для очищення, практика “Золоті нитки сонця” та медитації на зоряне небо.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-heart"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Чуттєвість і серце</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Вміння відчувати життя та бачити красу. Робота з емоціями через почуття-знання та теплі, глибокі вечірні розмови біля вогню.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-leaf"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Мова природи</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Навчання розмови з Живим: як чути голос води, вітру, квітів. Спілкування з духами лісу, вартовими та мешканцями простору.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-fire-flame-simple"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Сили стихій</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Взаємодія з вогнем, водою, повітрям та землею. Ритуали стихійного очищення та налаштування на силу природи для перетворення свідомості.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-seedling"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Світ рослин</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Збір трав за законами характерників, створення індивідуального чаю. Знайомство з квітами-енергіями та деревами-порталами.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-eye"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Розвиток бачення</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Практики тонкого бачення, відчуття простору та сприйняття енергій. Ментальні подорожі та занурення в природні стани усвідомлення.</p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-mountain"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Місця сили</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Геометрія присутності: як розпізнавати місця сили, бачити потоки енергії, наповнюватись від них та створювати власне місце.</p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-earth/20 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                    <div class="text-sage text-3xl mb-4"><i class="fas fa-sparkles"></i></div>
+                    <h4 class="text-xl font-serif font-bold text-forest mb-3">Та багато іншого...</h4>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed">Природні орнаменти, створення живого щоденника душі, пам’ятні амулети та посвята у внутрішній простір «мови природи».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-24 bg-nature-pattern bg-cover bg-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl">
+                <span class="text-sage uppercase tracking-widest text-sm font-semibold bg-white/80 px-2 py-1 rounded">Місце проведення</span>
+                <h2 class="mt-4 font-serif text-4xl md:text-5xl text-forest mb-6">Неймовірний простір у горах</h2>
+                <div class="text-gray-800 mb-8 leading-relaxed font-medium text-lg bg-white/60 p-4 border-l-4 border-sage rounded-r-lg backdrop-blur-sm space-y-4">
+                    <p>Ми житимемо в затишному Котеджі «Райський Куточок» селище Верховина, далеко від туристичних маршрутів. Тут немає шуму машин, лише спів птахів та шум вітру в смереках.</p>
+                    <p>Обійнята смарагдовими схилами Карпат, ця місцина дарує забуття від плину часу та занурює у глибокий природний спокій. Кожен погляд з вікна відкриває мальовничі пейзажі, здатні зцілювати душу, тоді як кришталево чисте гірське повітря наповнює тіло життєвою силою. Зовсім поряд розкинувся густий ліс. Улітку він щедро обдаровує грибами та лісовими ягодами, а коли спадають сутінки, тут панує абсолютна тиша, яку ніжно гойдає лише легкий подих вітру.</p>
+                </div>
+                
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center text-dark bg-white/70 backdrop-blur-sm p-2 rounded w-max">
+                        <i class="fas fa-check text-sage mr-3"></i> Комфортні номери
+                    </li>
+                    <li class="flex items-center text-dark bg-white/70 backdrop-blur-sm p-2 rounded w-max">
+                        <i class="fas fa-check text-sage mr-3"></i> Відмінний простір для занять і практик
+                    </li>
+                    <li class="flex items-center text-dark bg-white/70 backdrop-blur-sm p-2 rounded w-max">
+                        <i class="fas fa-check text-sage mr-3"></i> 3-разове харчування
+                    </li>
+                </ul>
+                
+                <div class="flex gap-4">
+                    <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cabin" class="w-32 h-32 object-cover rounded-lg shadow-md border-2 border-white">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Food" class="w-32 h-32 object-cover rounded-lg shadow-md border-2 border-white hidden sm:block">
+                    <img src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mountains" class="w-32 h-32 object-cover rounded-lg shadow-md border-2 border-white hidden md:block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-sage uppercase tracking-widest text-sm font-semibold">Розклад</span>
+                <h2 class="mt-2 font-serif text-4xl md:text-5xl text-forest">Програма семінару</h2>
+                <div class="w-24 h-1 bg-sage mx-auto mt-6 opacity-50"></div>
+            </div>
+
+            <!-- Core Immersion Schedule Card -->
+            <div class="bg-sand rounded-tr-[3rem] rounded-bl-[3rem] p-8 md:p-12 shadow-md border border-earth/30 max-w-2xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="font-serif text-3xl text-forest font-bold">Типовий розклад дня семінару:</h3>
+                    <p class="text-sage uppercase tracking-widest text-sm font-semibold mt-2">9 - 15 Липня</p>
+                    <div class="w-12 h-[2px] bg-earth/60 mx-auto mt-4"></div>
+                </div>
+                
+                <ul class="text-gray-700 font-light space-y-4 text-base max-w-md mx-auto">
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">05:30</span>
+                        <span>Підйом. Зустріч сходу Сонця. Ранкова практика, дихання, вправи</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">08:00</span>
+                        <span>Спільний сніданок</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">09:30</span>
+                        <span>Подорож у гори, практика спостереження, енергетичні маршрути</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">13:00</span>
+                        <span>Спільний обід</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">14:00</span>
+                        <span>Вільний час (за бажанням: творчі майстер-класи, тиша, відпочинок, басейн, екскурсії)</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">16:00</span>
+                        <span>Заняття: лекції, практики, обговорення (теми уточнюються заздалегідь)</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">19:00</span>
+                        <span>Спільна вечеря</span>
+                    </li>
+                    <li class="flex items-start gap-4 pb-3 border-b border-earth/20">
+                        <span class="font-semibold text-forest min-w-[60px]">20:00</span>
+                        <span>Вечірнє коло біля багаття, живе спілкування, духовні бесіди, пісні. Баня/чан (в один із днів)</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="font-semibold text-forest min-w-[60px]">22:00</span>
+                        <span>Відбій</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-earth/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-tr-[4rem] rounded-bl-[4rem] shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/5">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Guide" class="h-full w-full object-cover min-h-[400px]">
+                    </div>
+                    <div class="md:w-3/5 p-10 md:p-16 flex flex-col justify-center">
+                        <span class="text-sage uppercase tracking-widest text-sm font-semibold mb-2">Ваш провідник</span>
+                        <h2 class="font-serif text-4xl text-forest mb-4">Скляр Катерина <br><span class="text-2xl text-gray-500 font-light italic">Професійний психолог та наставник</span></h2>
+                        <div class="text-gray-600 font-light leading-relaxed mb-6 space-y-4 text-sm md:text-base">
+                            <p>Професійний психолог, астролог, педагог, тренер особистісного та духовного зростання, автор унікальних програм розвитку людини та нових напрямків в психології: духовна та супраментальна психологія. Має медичну освіту та 15-річний досвід роботи в медицині.</p>
+                            <p>Відроджує систему Старших Арканів Таро, та вивчає духовні світи та можливості людини доторкнутися до цих станів та світу янголів. Створює систему духовного розвитку, де людина відкриває бачення свого тонкого устрою і світла в собі, яке впливає на якість розвитку і людини, і суспільства.</p>
+                            <p>Має три вищі освіти та 35-річний досвід роботи з людьми. Заснувала в 2001 році жіночий центр «Сила жінки», в 2013 році «Центр духовної психології». В 2019 Центр розширився та змінив назву на «Центр супраментальної психології».</p>
+                            <p>Центр розвиває здібність чуття та бачення в людях, розкриває внутрішнє світло в людині та інші високі якості, які покращують долю людини та впливають на розвиток суспільства.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">35 років досвіду</span>
+                            <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">Духовна психологія</span>
+                            <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">Супраментальна психологія</span>
+                        </div>
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Signature.svg/1280px-Signature.svg.png" alt="Signature" class="h-10 opacity-40 hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-sage uppercase tracking-widest text-sm font-semibold">Інвестиція в себе</span>
+                <h2 class="mt-2 font-serif text-4xl md:text-5xl text-forest">Вартість участі</h2>
+            </div>
+
+            <div class="max-w-md mx-auto">
+                <!-- Package 1 -->
+                <div class="bg-white p-8 md:p-12 border-t-4 border-sage shadow-lg hover:shadow-xl transition-shadow relative">
+                    <div class="mb-8 text-center flex flex-col gap-3">
+                        <div>
+                            <span class="text-4xl font-semibold text-dark">15500 грн.</span>
+                            <span class="text-gray-500 text-sm">/ за дорослого</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-semibold text-sage">10000 грн.</span>
+                            <span class="text-gray-500 text-sm">/ за дитину</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-10 text-gray-700 font-light text-sm">
+                        <li class="flex items-start"><i class="fas fa-circle text-[8px] text-sage mt-2 mr-3"></i> Проживання в 2-місному номері з роздільними ліжками</li>
+                        <li class="flex items-start"><i class="fas fa-circle text-[8px] text-sage mt-2 mr-3"></i> 3-разове харчування (дуже гарне!)</li>
+                        <li class="flex items-start"><i class="fas fa-circle text-[8px] text-sage mt-2 mr-3"></i> Усі майстер класи впродовж семінару та супровід по всіх маршрутах</li>
+                        <li class="flex items-start"><i class="fas fa-circle text-[8px] text-sage mt-2 mr-3"></i> Оформлення документів для підйому на гору Вухатий Камінь (там будемо проходити погран зону)</li>
+                        <li class="flex items-start"><i class="fas fa-circle text-[8px] text-sage mt-2 mr-3"></i> Сам семінар</li>
+                    </ul>
+                    
+                    <a href="https://t.me/center_SP" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-forest text-forest py-3 uppercase tracking-widest text-sm hover:bg-forest hover:text-white transition-colors duration-300">
+                        Забронювати місце
+                    </a>
+                </div>
+                
+                <div class="mt-6 text-center text-forest font-medium tracking-wide">
+                    <p class="inline-flex items-center gap-2 px-4 py-2 bg-white/60 border border-earth/30 rounded-full text-sm">
+                        <i class="fas fa-users text-sage"></i> Група до 30 осіб
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 max-w-xl mx-auto bg-white/40 border border-earth/30 rounded-sm p-6 md:p-8 text-left text-sm text-gray-700 font-light">
+                <h4 class="font-serif font-bold text-forest text-base mb-4 text-center uppercase tracking-wider">У вартість НЕ входить:</h4>
+                <ol class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="font-semibold text-sage text-base">1.</span>
+                        <div>
+                            <span class="font-medium text-dark">Дорога до місця призначення і назад.</span><br>
+                            Зручно їхати потягом ☝🏻 головне купити квитки. Їхати на поїзді до Ворохти ‼️ Це 30 км до Верховини.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="font-semibold text-sage text-base">2.</span>
+                        <div>
+                            <span class="font-medium text-dark">Трансфер з ЖД вокзалу до садиби, та на вокзал в день від’їзду, коли ви будете їхати додому.</span><br>
+                            Найчастіше ми бронюємо маршрутку і вона вас зустріне і довезе до садиби.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="font-semibold text-sage text-base">3.</span>
+                        <div>
+                            <span class="font-medium text-dark">Додаткові екскурсії та поїздки в гори.</span><br>
+                            Найчастіше всі додаткові витрати — десь 1000 - 1500 грн з людини.
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts" class="bg-dark text-white pt-16 pb-8 border-t-4 border-sage">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+                
+                <div>
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider uppercase mb-4 block">СЕМІНАР В КАРПАТАХ</span>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                        Це і відпочинок!<br>
+                        І це нові знання! <br>
+                        Це і знайомства! <br>
+                        Це нові гори - а значить нові можливості!
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-sage uppercase tracking-widest text-sm mb-4">Контакти</h4>
+                    <p class="text-gray-300 font-light text-sm mb-2"><i class="fas fa-phone text-sage mr-2"></i> +380 (67) 212-20-19</p>
+                    <p class="text-gray-300 font-light text-sm mb-2"><i class="fas fa-envelope text-sage mr-2"></i> <a href="mailto:duhpsychology@gmail.com" class="hover:text-white transition-colors">duhpsychology@gmail.com</a></p>
+                    <p class="text-gray-300 font-light text-sm"><i class="fab fa-telegram text-sage mr-2"></i> <a href="https://t.me/center_SP" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@center_SP</a></p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-sage uppercase tracking-widest text-sm mb-4">Соцмережі</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/supramental.center" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-sage transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/duhpsychology" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-sage transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://t.me/+EXBifPqQfeMxOGIy" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-sage transition-colors duration-300">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+                <p>&copy; 2026 Семінар в Карпатах. Всі права захищено.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-sage transition-colors">Політика конфіденційності</a>
+                    <a href="#" class="hover:text-sage transition-colors">Договір оферти</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('py-4', 'py-0');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Fade In Animation logic (simple Intersection Observer)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // In this specific HTML, the fade-in-up class already handles the hero section well.
+            // For extending animations down the page, you would add classes and observe them here.
+        });
+    </script>
+</body>
+</html>
+```
+
+Подивіться, як тепер виглядає блок «Про семінар» (У програмі семінару). Наступним кроком можемо оновити розклад по днях або блок про Провідника (майстра). Як вам такий вигляд?
