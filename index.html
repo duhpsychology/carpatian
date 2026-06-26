@@ -82,6 +82,7 @@
                     <a href="#about" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Про семінар</a>
                     <a href="#location" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Локація</a>
                     <a href="#program" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Програма</a>
+                    <a href="#journey" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Шлях подорожі</a>
                     <a href="#pricing" class="text-sm uppercase tracking-widest text-dark hover:text-sage transition-colors">Вартість</a>
                     <a href="#contacts" class="px-6 py-2 border border-forest text-forest hover:bg-forest hover:text-white transition-all duration-300 rounded-sm text-sm uppercase tracking-widest">
                         Бронювати
@@ -103,6 +104,7 @@
                 <a href="#about" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Про семінар</a>
                 <a href="#location" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Локація</a>
                 <a href="#program" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Програма</a>
+                <a href="#journey" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Шлях подорожі</a>
                 <a href="#pricing" class="block px-3 py-3 text-base uppercase tracking-widest hover:bg-earth/20 transition-colors">Вартість</a>
                 <a href="#contacts" class="block mt-4 px-3 py-3 bg-forest text-white uppercase tracking-widest rounded-sm mx-4">Бронювати місце</a>
             </div>
@@ -230,6 +232,7 @@
     </section>
 
     <section id="location" class="py-24 bg-nature-pattern bg-cover bg-center relative">
+        <div class="absolute inset-0 bg-sand/80"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-2xl">
                 <span class="text-sage uppercase tracking-widest text-sm font-semibold bg-white/80 px-2 py-1 rounded">Місце проведення</span>
@@ -318,6 +321,204 @@
         </div>
     </section>
 
+    <section id="journey" class="py-24 bg-sand border-t border-b border-earth/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-sage uppercase tracking-widest text-sm font-semibold">Хроніка атмосфери</span>
+                <h2 class="mt-2 font-serif text-4xl md:text-5xl text-forest">ШЛЯХ ПОДОРОЖІ</h2>
+                <p class="text-gray-500 font-light text-base mt-4 max-w-2xl mx-auto">
+                    Пориньте очима у кожну мить нашої подорожі. Від раннього сходу сонця, походів у гори та ліси Карпат, лекцій та практик семінару, до затишної вечірньої ватри. Натисніть на будь-яке фото, щоб роздивитись красу зблизька.
+                </p>
+                <div class="w-24 h-1 bg-sage mx-auto mt-6 opacity-50"></div>
+            </div>
+
+            <!-- Photogrid Container -->
+            <!-- We display 12 beautiful photos initially. Clicking the expand button reveals the remaining 33! -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+                <!-- 1. Mountains and Path -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Величні вершини Карпат" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 2. Mystic Morning -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ранковий туман над смереками" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 3. Hiker Sunset -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1533632325162-637b99723650?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Захід сонця на вершині" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 4. Sun in Forest -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Сонячні промені крізь ліс" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 5. Pine Needles Path -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Лісова стежка" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 6. Peaceful Valley -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1472214222541-d510753a4707?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Зелена карпатська долина" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 7. Campfire warmth -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(6)">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Живе вогнище в лісі" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 8. Cozy Wooden Cabin -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(7)">
+                    <img src="https://images.unsplash.com/photo-1486916856992-e4db22c8df33?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Простір нашого затишного котеджу" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 9. Yoga in mountains -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(8)">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Медитативна йога на схилі" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 10. Stars over Tent -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(9)">
+                    <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Зоряне небо та дух ночівлі" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 11. Hiker Ridge Walk -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(10)">
+                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Шлях по хребту" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <!-- 12. Fresh herbal tea -->
+                <div class="overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(11)">
+                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Трав'яний карпатський чай" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+
+                <!-- 13 - 45 Hidden Photos (Revealed smoothly via JS) -->
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(12)">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Тихе гірське озеро" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(13)">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Золота година у долині" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(14)">
+                    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Величні стіни гір" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(15)">
+                    <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Промені світла крізь туман" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(16)">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Шум вітру в пралісах" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(17)">
+                    <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Сила старезного дерева" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(18)">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Шорсткість деревини та кори" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(19)">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Зоряні Карпати вночі" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(20)">
+                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Чистий світанок" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(21)">
+                    <img src="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Чай на багатті" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(22)">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Спільна трапеза" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(23)">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Споглядання безмежжя" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(24)">
+                    <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ведення душевного щоденника" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(25)">
+                    <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Кришталева гірська річка" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(26)">
+                    <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Шлях між віковими смереками" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(27)">
+                    <img src="https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Спокійна хода горами" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(28)">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Творча робота в затишку" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(29)">
+                    <img src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Гірський водоспад сил стихій" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(30)">
+                    <img src="https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Краєвид з тераси садиби" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(31)">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Дзеркало чистої води" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(32)">
+                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Загадкова туманна алея" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(33)">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Медитація серця на заході сонця" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(34)">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Природа Карпат зблизька (папороть)" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(35)">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Гарячий чан на духмяних травах" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(36)">
+                    <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Екологічний карпатський чан" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(37)">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Смачна вегетаріанська і звичайна їжа" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(38)">
+                    <img src="https://images.unsplash.com/photo-1525201548942-d8b8967d0f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Пісні під гітару біля ватри" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(39)">
+                    <img src="https://images.unsplash.com/photo-1500627869374-13cd993b1115?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Неймовірне смарагдове наповнення" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(40)">
+                    <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ранкова свіжість роси" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(41)">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Перлини роси на травинках" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(42)">
+                    <img src="https://images.unsplash.com/photo-1548625361-155de0cbb55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Вказівники на стежках у горах" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(43)">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Дика природа Карпат" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="hidden-photo hidden overflow-hidden rounded-sm shadow-sm hover:shadow-lg transition-all duration-500 group aspect-[4/3] cursor-pointer" onclick="openLightbox(44)">
+                    <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Високі дерева над головою" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+            </div>
+
+            <!-- Expand Button -->
+            <div class="text-center mt-12">
+                <button id="toggle-gallery-btn" onclick="toggleGallery()" class="inline-block border border-forest text-forest hover:bg-forest hover:text-white px-8 py-3 uppercase tracking-widest text-sm font-semibold transition-all duration-300 rounded-sm shadow-sm hover:shadow-md">
+                    Показати весь шлях подорожі (45 фото)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex flex-col items-center justify-center p-4">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl hover:text-sage transition-colors focus:outline-none z-55">
+            <i class="fas fa-times"></i>
+        </button>
+        <!-- Prev Button -->
+        <button onclick="prevLightboxImage()" class="absolute left-4 md:left-8 text-white/50 hover:text-white text-4xl transition-colors focus:outline-none z-55">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <!-- Image & Caption Container -->
+        <div class="max-w-4xl max-h-[80vh] flex flex-col items-center justify-center">
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[70vh] object-contain rounded shadow-2xl">
+            <p id="lightbox-caption" class="text-white/80 font-light text-center mt-6 text-lg tracking-wide"></p>
+        </div>
+        <!-- Next Button -->
+        <button onclick="nextLightboxImage()" class="absolute right-4 md:right-8 text-white/50 hover:text-white text-4xl transition-colors focus:outline-none z-55">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <!-- Slide counter -->
+        <div class="absolute bottom-6 text-white/50 text-sm tracking-widest" id="lightbox-counter">
+            1 / 45
+        </div>
+    </div>
+
     <section class="py-20 bg-earth/20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-tr-[4rem] rounded-bl-[4rem] shadow-xl overflow-hidden">
@@ -327,20 +528,14 @@
                     </div>
                     <div class="md:w-3/5 p-10 md:p-16 flex flex-col justify-center">
                         <span class="text-sage uppercase tracking-widest text-sm font-semibold mb-2">Ваш провідник</span>
-                        <h2 class="font-serif text-4xl text-forest mb-4">Скляр Катерина <br><span class="text-2xl text-gray-500 font-light italic">Професійний психолог та наставник</span></h2>
+                        <h2 class="font-serif text-4xl text-forest mb-4">Скляр Катерина <br><span class="text-xl md:text-2xl text-gray-500 font-light italic block mt-1">Специалист в супраментальной психологии</span></h2>
                         <div class="text-gray-600 font-light leading-relaxed mb-6 space-y-4 text-sm md:text-base">
-                            <p>Професійний психолог, астролог, педагог, тренер особистісного та духовного зростання, автор унікальних програм розвитку людини та нових напрямків в психології: духовна та супраментальна психологія. Має медичну освіту та 15-річний досвід роботи в медицині.</p>
-                            <p>Відроджує систему Старших Арканів Таро, та вивчає духовні світи та можливості людини доторкнутися до цих станів та світу янголів. Створює систему духовного розвитку, де людина відкриває бачення свого тонкого устрою і світла в собі, яке впливає на якість розвитку і людини, і суспільства.</p>
+                            <p>Специалист в супраментальной психологии. Тренер личностного роста и автор курсов развития человека. Обучает видению и чувствознанию. Имеет способность видеть и чувствовать жителей «тонких миров». Знает язык природы.</p>
                             <p>Має три вищі освіти та 35-річний досвід роботи з людьми. Заснувала в 2001 році жіночий центр «Сила жінки», в 2013 році «Центр духовної психології». В 2019 Центр розширився та змінив назву на «Центр супраментальної психології».</p>
-                            <p>Центр розвиває здібність чуття та бачення в людях, розкриває внутрішнє світло в людині та інші високі якості, які покращують долю людини та впливають на розвиток суспільства.</p>
+                            <p>Центр розвиває здібність чуття та бачення в людях, розкриває внутрішнє світло в людині та інші високі якості, які покращують долю людини та впливають на развитие суспільства.</p>
                         </div>
                         <div class="flex flex-wrap gap-3 mb-6">
                             <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">35 років досвіду</span>
-                            <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">Духовна психологія</span>
-                            <span class="bg-sand text-forest px-3 py-1 text-xs uppercase tracking-wider rounded-sm border border-earth/50">Супраментальна психологія</span>
-                        </div>
-                        <div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Signature.svg/1280px-Signature.svg.png" alt="Signature" class="h-10 opacity-40 hidden">
                         </div>
                     </div>
                 </div>
@@ -403,7 +598,7 @@
                         <span class="font-semibold text-sage text-base">2.</span>
                         <div>
                             <span class="font-medium text-dark">Трансфер з ЖД вокзалу до садиби, та на вокзал в день від’їзду, коли ви будете їхати додому.</span><br>
-                            Найчастіше ми бронюємо маршрутку і вона вас зустріне і довезе до садиби.
+                            Найчастіше мы бронюємо маршрутку і вона вас зустріне і довезе до садиби.
                         </div>
                     </li>
                     <li class="flex items-start gap-3">
@@ -466,7 +661,6 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
     <script>
         // Navbar styling on scroll
         window.addEventListener('scroll', () => {
@@ -495,23 +689,95 @@
             });
         });
 
-        // Fade In Animation logic (simple Intersection Observer)
-        document.addEventListener("DOMContentLoaded", function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
+        // Gallery expansion logic (handling 45 photos gracefully)
+        let isGalleryExpanded = false;
+        function toggleGallery() {
+            const hiddenPhotos = document.querySelectorAll('.hidden-photo');
+            const toggleBtn = document.getElementById('toggle-gallery-btn');
+            
+            isGalleryExpanded = !isGalleryExpanded;
+            
+            hiddenPhotos.forEach(photo => {
+                if (isGalleryExpanded) {
+                    photo.classList.remove('hidden');
+                    photo.classList.add('animate-fadeIn');
+                } else {
+                    photo.classList.add('hidden');
+                }
+            });
+            
+            if (isGalleryExpanded) {
+                toggleBtn.innerText = "Згорнути галерею";
+            } else {
+                toggleBtn.innerText = "Показати весь шлях подорожі (45 фото)";
+                // Scroll back to journey section smoothly so the user doesn't get lost
+                document.getElementById('journey').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
 
-            // In this specific HTML, the fade-in-up class already handles the hero section well.
-            // For extending animations down the page, you would add classes and observe them here.
+        // Lightbox functionality for interactive full-screen preview
+        let currentPhotoIndex = 0;
+        let allPhotoElements = [];
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Collect all photogrid images for navigation
+            allPhotoElements = Array.from(document.querySelectorAll('#gallery-grid img'));
+        });
+
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            // Get source and alt of chosen photo
+            const selectedImg = allPhotoElements[index];
+            lightboxImg.src = selectedImg.src.replace('w=600', 'w=1200'); // Load higher resolution for fullscreen view
+            lightboxCaption.innerText = selectedImg.alt;
+            lightboxCounter.innerText = `${index + 1} / ${allPhotoElements.length}`;
+            
+            // Open lightbox with fadeIn
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent body scroll
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore body scroll
+        }
+
+        function nextLightboxImage() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % allPhotoElements.length;
+            updateLightboxContent();
+        }
+
+        function prevLightboxImage() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + allPhotoElements.length) % allPhotoElements.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            const nextImg = allPhotoElements[currentPhotoIndex];
+            lightboxImg.src = nextImg.src.replace('w=600', 'w=1200');
+            lightboxCaption.innerText = nextImg.alt;
+            lightboxCounter.innerText = `${currentPhotoIndex + 1} / ${allPhotoElements.length}`;
+        }
+
+        // Keyboard navigation in lightbox
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextLightboxImage();
+                if (e.key === 'ArrowLeft') prevLightboxImage();
+            }
         });
     </script>
 </body>
 </html>
-```
-
-Подивіться, як тепер виглядає блок «Про семінар» (У програмі семінару). Наступним кроком можемо оновити розклад по днях або блок про Провідника (майстра). Як вам такий вигляд?
